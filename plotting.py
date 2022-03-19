@@ -60,6 +60,9 @@ def plot_initialization(self):
 	self.filename_label.setText(os.path.split(self.importFilenames[0][0])[1])
 	self.wholePlot.setData(self.time[::100], self.current[::100], pen='b') 
 	
+	
+
+	
 	# self.frame_size = self.frameSizeSlider.value()
 	
 	# self.numframes = np.ceil(self.time[-1] / self.frame_size)
@@ -68,11 +71,20 @@ def plot_initialization(self):
 	self.frame_boundaries()
 
 	self.cropPlot.setData(self.time[self.start_ind:self.stop_ind], self.current[self.start_ind:self.stop_ind], pen='b')
+	
+	# self.zoomedViewWindow = pg.LinearRegionItem([self.time[self.start_ind], self.time[self.stop_ind]])
+	# self.zoomedViewWindow.setZValue(10)
+	# self.ui.whole_plot.addItem(self.zoomedViewWindow)
+	
+	
 	self.playbackPositionSlider.setMaximum(self.numFrames)
 
 	self.frameNumber_label.setText(f'{self.ind} / {self.numFrames}')
 	
 	self.setPlaybackSpeed()
+	
+	
+	self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[self.stop_ind]])
 
 
 
@@ -109,10 +121,11 @@ def plot_update(self):
 		
 		self.cropPlot.setData(self.time[self.start_ind:self.stop_ind], self.current[self.start_ind:self.stop_ind], pen='b')
 		
-		self.tab1_IV_linearRegion = pg.LinearRegionItem([np.min(self.v_g), np.max(self.v_g)])
+		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[self.stop_ind - 1]])
 		
 	else:
 		self.cropPlot.setData(self.time[self.start_ind:], self.current[self.start_ind:], pen='b')
+		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[-1]])
 	
 	
 	QtWidgets.QApplication.processEvents()   

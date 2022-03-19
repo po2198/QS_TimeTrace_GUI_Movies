@@ -49,6 +49,11 @@ class MainWindow(QtWidgets.QMainWindow):
 		self.wholePlot = self.ui.whole_plot.plot()
 		self.whole_plot.setBackground('w')
 		
+		self.zoomedViewWindow = pg.LinearRegionItem()
+		self.zoomedViewWindow.setZValue(10)
+		self.ui.whole_plot.addItem(self.zoomedViewWindow)		
+		
+		
 		self.cropPlot = self.ui.crop_plot.plot()
 		self.crop_plot.setBackground('w')
 		
