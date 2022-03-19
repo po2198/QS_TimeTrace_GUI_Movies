@@ -28,7 +28,7 @@ from re import search
 class MainWindow(QtWidgets.QMainWindow):
 	from import_data import getfiles, importRealTime
 	from plotting import plot_update, stepBackward, stepForward, plotRestart, plot_initialization, playButtonHandler, \
-	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing
+	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated
 	
 	def __init__(self, *args, **kwargs):
         
@@ -49,9 +49,13 @@ class MainWindow(QtWidgets.QMainWindow):
 		self.wholePlot = self.ui.whole_plot.plot()
 		self.whole_plot.setBackground('w')
 		
+		
+		#whole plot linear region item for (i) showing cropped view and (ii) selecting regions for labeling data sections
 		self.zoomedViewWindow = pg.LinearRegionItem()
 		self.zoomedViewWindow.setZValue(10)
 		self.ui.whole_plot.addItem(self.zoomedViewWindow)		
+		
+		self.zoomedViewWindow.sigRegionChanged.connect(self.selectedRegionUpdated)
 		
 		
 		self.cropPlot = self.ui.crop_plot.plot()

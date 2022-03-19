@@ -46,11 +46,11 @@ def frame_boundaries(self):
 	
 	self.ind_per_frame = np.round(self.frame_size / self.time_delta)
 	
-	print(self.ind_per_frame)
+	#print(self.ind_per_frame)
 	self.start_ind = int(self.ind * self.ind_per_frame)
 	
 	self.stop_ind = int(self.start_ind + self.ind_per_frame )
-	print(self.start_ind, self.stop_ind)
+	#print(self.start_ind, self.stop_ind)
 	
 	
 def plot_initialization(self):
@@ -157,7 +157,7 @@ def playButtonHandler(self):
 	
 	self.playing = not self.playing
 	
-	print(self.playing)
+	#print(self.playing)
 	
 	if self.playing == True:
 		self.plot_playing()
@@ -214,4 +214,17 @@ def playbackSliderPosition(self):
 		
 def setPlaybackSpeed(self):
 	self.pauseTime = 1 - self.playbackSpeedSlider.value() * 0.1 + 0.1
+	
+	
+	
+def selectedRegionUpdated(self):
+	self.lo, self.hi = self.zoomedViewWindow.getRegion()
+	
+	
+	ind = int(np.round(self.lo / self.time_delta ))
+	val = self.time[ind]
+	
+	print('default: ', self.lo, '; index: ', ind, '; index vlue:', val)
+	self.startTime_lineEdit.setText(f'{self.lo:.3f}')
+	self.stopTime_lineEdit.setText(f'{self.hi:.3f}')
 

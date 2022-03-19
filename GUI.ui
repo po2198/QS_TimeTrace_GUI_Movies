@@ -377,7 +377,7 @@
           <string>Stop Time</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="startTime_lineEdit">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -413,7 +413,7 @@
           <string>PushButton</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="stopTime_lineEdit">
          <property name="geometry">
           <rect>
            <x>100</x>
@@ -453,14 +453,14 @@
        <widget class="QPushButton" name="pushButton_4">
         <property name="geometry">
          <rect>
-          <x>660</x>
+          <x>624</x>
           <y>510</y>
-          <width>75</width>
+          <width>111</width>
           <height>23</height>
          </rect>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>&lt; Previous Selection</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_5">
@@ -468,12 +468,12 @@
          <rect>
           <x>760</x>
           <y>510</y>
-          <width>75</width>
+          <width>101</width>
           <height>23</height>
          </rect>
         </property>
         <property name="text">
-         <string>PushButton</string>
+         <string>Next Selection &gt;</string>
         </property>
        </widget>
       </widget>
