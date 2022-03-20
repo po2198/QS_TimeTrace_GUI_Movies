@@ -129,7 +129,7 @@ def plot_update(self):
 		
 		
 		
-	else:
+	elif self.ind == self.numFrames:
 		self.cropPlot.setData(self.time[self.start_ind:], self.current[self.start_ind:], pen='b')
 		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[-1]])
 		
@@ -180,8 +180,9 @@ def stepForward(self):
 	
 	if self.playing == False:
 	
-		if self.ind  < self.numFrames:
+		if self.ind  < self.numFrames - 1:
 			self.ind = self.ind + 1 
+			print('current frame: ', self.ind, '; total frames: ', self.numFrames)
 			self.plot_update()
 			
 			self.playbackPositionSlider.setValue(self.ind + 1)
@@ -229,10 +230,14 @@ def selectedRegionUpdated(self):
 	self.lo, self.hi = self.zoomedViewWindow.getRegion()
 	
 	
-	ind = int(np.round(self.lo / self.time_delta ))
-	val = self.time[ind]
+	self.lo_ind = int(np.round(self.lo / self.time_delta ))
+	self.hi_ind = int(np.round(self.hi / self.time_delta )) 
 	
-	print('default: ', self.lo, '; index: ', ind, '; index vlue:', val)
+	#print('default: ', self.lo, '; index: ', ind, '; index vlue:', val)
 	self.startTime_lineEdit.setText(f'{self.lo:.3f}')
 	self.stopTime_lineEdit.setText(f'{self.hi:.3f}')
 
+
+def selectedRegionPlot(self):
+	
+	self.cropPlot.setData(self.time[self.lo_ind:self.hi_ind], self.current[self.lo_ind:self.hi_ind], pen='r')

@@ -28,7 +28,9 @@ from re import search
 class MainWindow(QtWidgets.QMainWindow):
 	from import_data import getfiles, importRealTime
 	from plotting import plot_update, stepBackward, stepForward, plotRestart, plot_initialization, playButtonHandler, \
-	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated
+	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated, \
+	selectedRegionPlot
+	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion
 	
 	def __init__(self, *args, **kwargs):
         
@@ -77,7 +79,7 @@ class MainWindow(QtWidgets.QMainWindow):
 		
 		
 		
-		
+		self.selectedRegionPlot_pushButton.clicked.connect(self.selectedRegionPlot)
 
 		self.playbackPositionSlider.valueChanged.connect(self.playbackSliderPosition)
 		
@@ -88,9 +90,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
 		
 		
-
-
+		self.DataLabels_comboBox.addItems(['Baseline Noise', 'NonBio RTN', 'Bio RTN', 'Wandering Baseline', 'Unusual Noise'  ])
+		          
+        #self.DataLabels_comboBox.activated.connect(self.)
+		
+		
+		self.labeledData_df = pd.DataFrame(columns = ['Data Classification', 'Start Index', 'Stop Index', 'Start Time', 'Stop Time'])
        
+		self.labelDataRange_pushButton.clicked.connect(self.addNewLabeledRegion)
+	   
+		self.labeledData_df_selectionIndex = -1
+		self.deleteLabeledRegion_pushButton.clicked.connect(self.deleteLabeledRegion)
             
 	def plotData(self):
         
