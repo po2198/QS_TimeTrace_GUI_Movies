@@ -46,6 +46,11 @@ class MainWindow(QtWidgets.QMainWindow):
 		
 		self.plotButton.clicked.connect(self.plot_initialization)  
 		
+		
+		
+		"""
+		Plotting windows
+		"""
 		self.wholePlot = self.ui.whole_plot.plot()
 		self.whole_plot.setBackground('w')
 		
@@ -61,6 +66,9 @@ class MainWindow(QtWidgets.QMainWindow):
 		self.cropPlot = self.ui.crop_plot.plot()
 		self.crop_plot.setBackground('w')
 		
+		
+		self.histPlot = self.ui.histogram_plot.plot()
+		self.histogram_plot.setBackground('w')
 		
 		self.stepBackButton.clicked.connect(self.stepBackward)
 		self.stepFwdButton.clicked.connect(self.stepForward)

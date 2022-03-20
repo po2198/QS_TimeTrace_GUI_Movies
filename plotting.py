@@ -123,10 +123,18 @@ def plot_update(self):
 		
 		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[self.stop_ind - 1]])
 		
+		y, x = np.histogram(self.current[self.start_ind:self.stop_ind],bins='fd')
+		
+		self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
+		
+		
+		
 	else:
 		self.cropPlot.setData(self.time[self.start_ind:], self.current[self.start_ind:], pen='b')
 		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[-1]])
-	
+		
+		y, x = np.histogram(self.current[self.start_ind:],bins='fd')	
+		self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
 	
 	QtWidgets.QApplication.processEvents()   
 		
