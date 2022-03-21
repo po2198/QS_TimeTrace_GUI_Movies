@@ -12,6 +12,8 @@ def addNewLabeledRegion(self):
 
 	#sort all of the labeled regions by time.
 	self.labeledData_df = self.labeledData_df.sort_values(by=['Start Index'])
+	print('saved selected region')
+	print(self.labeledData_df.head())
 	
 	#dataFrame = dataFrame.drop(index) to remove a row
 	#dataFrame = dataFrame.reset_index(drop=True) to reset the index(the row labels)
