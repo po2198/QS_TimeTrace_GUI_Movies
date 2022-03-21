@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1171</width>
-    <height>826</height>
+    <height>817</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
        <widget class="QPushButton" name="loadDataButton">
         <property name="geometry">
          <rect>
-          <x>730</x>
+          <x>700</x>
           <y>10</y>
           <width>75</width>
           <height>23</height>
@@ -59,7 +59,7 @@
           <rect>
            <x>10</x>
            <y>10</y>
-           <width>441</width>
+           <width>421</width>
            <height>191</height>
           </rect>
          </property>
@@ -77,7 +77,7 @@
         <widget class="PlotWidget" name="histogram_plot" native="true">
          <property name="geometry">
           <rect>
-           <x>460</x>
+           <x>440</x>
            <y>10</y>
            <width>211</width>
            <height>191</height>
@@ -263,8 +263,8 @@
        <widget class="QLabel" name="filename_label">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>120</y>
+          <x>680</x>
+          <y>180</y>
           <width>261</width>
           <height>51</height>
          </rect>
@@ -276,18 +276,18 @@
        <widget class="QTreeView" name="treeView">
         <property name="geometry">
          <rect>
-          <x>820</x>
+          <x>795</x>
           <y>10</y>
-          <width>256</width>
-          <height>101</height>
+          <width>341</width>
+          <height>181</height>
          </rect>
         </property>
        </widget>
        <widget class="QPushButton" name="plotButton">
         <property name="geometry">
          <rect>
-          <x>730</x>
-          <y>80</y>
+          <x>700</x>
+          <y>50</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -299,9 +299,9 @@
        <widget class="QTextEdit" name="textEdit">
         <property name="geometry">
          <rect>
-          <x>740</x>
-          <y>180</y>
-          <width>341</width>
+          <x>680</x>
+          <y>240</y>
+          <width>461</width>
           <height>111</height>
          </rect>
         </property>
@@ -309,9 +309,9 @@
        <widget class="QGroupBox" name="groupBox_5">
         <property name="geometry">
          <rect>
-          <x>670</x>
+          <x>680</x>
           <y>360</y>
-          <width>451</width>
+          <width>461</width>
           <height>241</height>
          </rect>
         </property>
@@ -321,8 +321,8 @@
         <widget class="QGroupBox" name="groupBox_3">
          <property name="geometry">
           <rect>
-           <x>290</x>
-           <y>30</y>
+           <x>270</x>
+           <y>20</y>
            <width>151</width>
            <height>80</height>
           </rect>
@@ -369,7 +369,7 @@
         <widget class="QGroupBox" name="groupBox_4">
          <property name="geometry">
           <rect>
-           <x>80</x>
+           <x>30</x>
            <y>20</y>
            <width>191</width>
            <height>61</height>
@@ -473,7 +473,7 @@
          <property name="title">
           <string>GroupBox</string>
          </property>
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="nextLabeledSelection_pushButton">
           <property name="geometry">
            <rect>
             <x>260</x>
@@ -486,7 +486,7 @@
            <string>Next Selection &gt;</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="previousLabeledSelection_pushButton">
           <property name="geometry">
            <rect>
             <x>140</x>
@@ -512,7 +512,7 @@
            <string>TextLabel</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="resaveLabeledRegion_pushButton">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -553,6 +553,11 @@
          </widget>
         </widget>
        </widget>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tab 3</string>
+       </attribute>
       </widget>
      </widget>
     </item>

@@ -57,7 +57,17 @@ def plot_initialization(self):
 	print(self.importFilenames)
 	self.time, self.time_delta, self.current, self.vgs, self.vds, self.electrolyte, self.temperature = self.importRealTime(self.importFilenames[0][0])
 	
-	self.filename_label.setText(os.path.split(self.importFilenames[0][0])[1])
+	
+	self.textEdit.append(os.path.split(self.importFilenames[0][0])[1])
+	
+	self.textEdit.append(f'Vgs = {self.vgs}')
+	self.textEdit.append(f'Vds = {self.vds}')
+	self.textEdit.append(f'Electrolyte = {self.electrolyte}')
+	
+	
+	
+	
+	#self.filename_label.setText(os.path.split(self.importFilenames[0][0])[1])
 	self.wholePlot.setData(self.time[::100], self.current[::100], pen='b') 
 	
 	

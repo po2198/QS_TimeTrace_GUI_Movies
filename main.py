@@ -30,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
 	from plotting import plot_update, stepBackward, stepForward, plotRestart, plot_initialization, playButtonHandler, \
 	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated, \
 	selectedRegionPlot
-	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion
+	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion, resaveLabledRegion, prevLabeledSelection, nextLabeledSelection
 	
 	def __init__(self, *args, **kwargs):
         
@@ -101,6 +101,13 @@ class MainWindow(QtWidgets.QMainWindow):
 	   
 		self.labeledData_df_selectionIndex = -1
 		self.deleteLabeledRegion_pushButton.clicked.connect(self.deleteLabeledRegion)
+		
+		
+		self.resaveLabeledRegion_pushButton.clicked.connect(self.resaveLabledRegion)
+		
+		
+		self.nextLabeledSelection_pushButton.clicked.connect(self.prevLabeledSelection)
+		self.previousLabeledSelection_pushButton.clicked.connect(self.nextLabeledSelection)
             
 	def plotData(self):
         
