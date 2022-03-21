@@ -108,6 +108,8 @@ class MainWindow(QtWidgets.QMainWindow):
 		
 		self.nextLabeledSelection_pushButton.clicked.connect(self.prevLabeledSelection)
 		self.previousLabeledSelection_pushButton.clicked.connect(self.nextLabeledSelection)
+		
+		self.selectionIndex = -1
             
 	def plotData(self):
         

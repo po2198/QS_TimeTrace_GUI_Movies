@@ -43,10 +43,29 @@ def resaveLabledRegion(self):
 	
 	
 def nextLabeledSelection(self):
+	
+	if self.selectionIndex != -1:
+		self.selectionIndex = self.selectionIndex + 1
+		
+		index = self.selectionIndex
+		data_classification = self.labeledData_df.at[index, 'Data Classification']
+		lo_ind = self.labeledData_df.at[index, 'Start Index']
+		hi_ind = self.labeledData_df.at[index, 'Stop Index'] 
+		time_lo_ind = self.labeledData_df.at[index, 'Start Time']
+		time_hi_ind = self.labeledData_df.at[index, 'Stop Time'] 
+		
 
-	pass
 
 
 def prevLabeledSelection(self):
 
-	pass
+	if self.selectionIndex != -1:
+		self.selectionIndex = self.selectionIndex - 1
+		
+		index = self.selectionIndex
+		data_classification = self.labeledData_df.at[index, 'Data Classification']
+		lo_ind = self.labeledData_df.at[index, 'Start Index']
+		hi_ind = self.labeledData_df.at[index, 'Stop Index'] 
+		time_lo_ind = self.labeledData_df.at[index, 'Start Time']
+		time_hi_ind = self.labeledData_df.at[index, 'Stop Time'] 
+		
