@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1171</width>
-    <height>817</height>
+    <width>1189</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,158 +18,19 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Tab 1</string>
-       </attribute>
-      </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Plotting and Data Labeling</string>
        </attribute>
-       <widget class="QPushButton" name="loadDataButton">
+       <widget class="QFrame" name="frame_4">
         <property name="geometry">
          <rect>
-          <x>700</x>
-          <y>10</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Load Data</string>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="groupBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>661</width>
-          <height>601</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="PlotWidget" name="whole_plot" native="true">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>10</y>
-           <width>421</width>
-           <height>191</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="PlotWidget" name="crop_plot" native="true">
-         <property name="geometry">
-          <rect>
-           <x>10</x>
-           <y>210</y>
-           <width>641</width>
-           <height>381</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="PlotWidget" name="histogram_plot" native="true">
-         <property name="geometry">
-          <rect>
-           <x>440</x>
-           <y>10</y>
-           <width>211</width>
-           <height>191</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QGroupBox" name="groupBoxTime_label">
-        <property name="geometry">
-         <rect>
-          <x>590</x>
-          <y>620</y>
-          <width>301</width>
-          <height>111</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="1" column="0">
-          <widget class="QLabel" name="frameSize_label">
-           <property name="text">
-            <string>3 sec</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Playback Speed</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QSlider" name="playbackSpeedSlider">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>10</number>
-           </property>
-           <property name="pageStep">
-            <number>1</number>
-           </property>
-           <property name="value">
-            <number>1</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="playbackspeed_label">
-           <property name="text">
-            <string>TextLabel</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Frame Size</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QSlider" name="frameSizeSlider">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>10</number>
-           </property>
-           <property name="pageStep">
-            <number>1</number>
-           </property>
-           <property name="value">
-            <number>3</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QFrame" name="frame_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>630</y>
-          <width>581</width>
-          <height>101</height>
+          <x>9</x>
+          <y>9</y>
+          <width>1154</width>
+          <height>561</height>
          </rect>
         </property>
         <property name="frameShape">
@@ -178,332 +39,408 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="stepBackButton">
-         <property name="geometry">
-          <rect>
-           <x>90</x>
-           <y>40</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>&lt; step back</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="playPauseButton">
+        <widget class="QGroupBox" name="groupBox">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>40</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Play / Pause</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="stepFwdButton">
-         <property name="geometry">
-          <rect>
-           <x>170</x>
-           <y>40</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>step fwd &gt;</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="restartPlayButton">
-         <property name="geometry">
-          <rect>
-           <x>250</x>
-           <y>40</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Restart</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="frameNumber_label">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>70</y>
-           <width>47</width>
-           <height>13</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-        <widget class="QSlider" name="playbackPositionSlider">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
            <y>10</y>
-           <width>521</width>
-           <height>22</height>
-          </rect>
-         </property>
-         <property name="minimum">
-          <number>1</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QLabel" name="filename_label">
-        <property name="geometry">
-         <rect>
-          <x>680</x>
-          <y>180</y>
-          <width>261</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Filename</string>
-        </property>
-       </widget>
-       <widget class="QTreeView" name="treeView">
-        <property name="geometry">
-         <rect>
-          <x>795</x>
-          <y>10</y>
-          <width>341</width>
-          <height>181</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="plotButton">
-        <property name="geometry">
-         <rect>
-          <x>700</x>
-          <y>50</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Plot</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="textEdit">
-        <property name="geometry">
-         <rect>
-          <x>680</x>
-          <y>240</y>
-          <width>461</width>
-          <height>111</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QGroupBox" name="groupBox_5">
-        <property name="geometry">
-         <rect>
-          <x>680</x>
-          <y>360</y>
-          <width>461</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>GroupBox</string>
-        </property>
-        <widget class="QGroupBox" name="groupBox_3">
-         <property name="geometry">
-          <rect>
-           <x>270</x>
-           <y>20</y>
-           <width>151</width>
-           <height>80</height>
+           <width>661</width>
+           <height>551</height>
           </rect>
          </property>
          <property name="title">
           <string/>
          </property>
-         <widget class="QRadioButton" name="saveTimeStamsOnly_radioButton">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="PlotWidget" name="whole_plot" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>420</width>
+                 <height>0</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PlotWidget" name="histogram_plot" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="PlotWidget" name="crop_plot" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>600</width>
+              <height>356</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QFrame" name="frame_5">
+         <property name="geometry">
+          <rect>
+           <x>676</x>
+           <y>10</y>
+           <width>481</width>
+           <height>551</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>290</y>
+            <width>461</width>
+            <height>241</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Data Labeling</string>
+          </property>
+          <widget class="QGroupBox" name="groupBox_4">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>10</y>
+             <width>191</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>10</y>
+              <width>47</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Stop Time</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="startTime_lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>30</y>
+              <width>81</width>
+              <height>20</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="stopTime_lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>30</y>
+              <width>81</width>
+              <height>20</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>10</y>
+              <width>47</width>
+              <height>13</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Start Time</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QComboBox" name="DataLabels_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>90</y>
+             <width>151</width>
+             <height>21</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="selectedRegionPlot_pushButton">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>30</y>
+             <width>151</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Plot Selected Region</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="labelDataRange_pushButton">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>90</y>
+             <width>161</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Save Labeled Data Range</string>
+           </property>
+          </widget>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>150</y>
+             <width>431</width>
+             <height>80</height>
+            </rect>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QPushButton" name="nextLabeledSelection_pushButton">
+            <property name="geometry">
+             <rect>
+              <x>360</x>
+              <y>10</y>
+              <width>71</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Next &gt;</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="previousLabeledSelection_pushButton">
+            <property name="geometry">
+             <rect>
+              <x>290</x>
+              <y>10</y>
+              <width>61</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt; Prev</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="selection_review_label">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>50</y>
+              <width>161</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="resaveLabeledRegion_pushButton">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>50</y>
+              <width>131</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Resave Data Range</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="deleteLabeledRegion_pushButton">
+            <property name="geometry">
+             <rect>
+              <x>310</x>
+              <y>50</y>
+              <width>121</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Delete Data Label</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="reviewLabeledSelection_pushButton">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>271</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Enable/Disable Selection Review</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QListWidget" name="filenames_listWidget">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>0</y>
+            <width>341</width>
+            <height>201</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="plotButton">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>50</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Plot</string>
+          </property>
+         </widget>
+         <widget class="QTextEdit" name="textEdit">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>210</y>
+            <width>391</width>
+            <height>81</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="loadDataButton">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>10</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Load Data</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>560</y>
+          <width>1154</width>
+          <height>115</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>115</height>
+         </size>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QFrame" name="frame_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>581</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QPushButton" name="stepBackButton">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>40</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>&lt; step back</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="playPauseButton">
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>40</y>
-            <width>131</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Save timestamps only</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroup</string>
-          </attribute>
-         </widget>
-         <widget class="QRadioButton" name="saveCroppedData_radioButton">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>121</width>
-            <height>17</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Save cropped  data</string>
-          </property>
-          <attribute name="buttonGroup">
-           <string notr="true">buttonGroup</string>
-          </attribute>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>20</y>
-           <width>191</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string/>
-         </property>
-         <widget class="QLabel" name="label_5">
-          <property name="geometry">
-           <rect>
-            <x>110</x>
-            <y>10</y>
-            <width>47</width>
-            <height>13</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Stop Time</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="startTime_lineEdit">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>81</width>
-            <height>20</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="stopTime_lineEdit">
-          <property name="geometry">
-           <rect>
-            <x>100</x>
-            <y>30</y>
-            <width>81</width>
-            <height>20</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_3">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>10</y>
-            <width>47</width>
-            <height>13</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Start Time</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QComboBox" name="DataLabels_comboBox">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>120</y>
-           <width>151</width>
-           <height>21</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="selectedRegionPlot_pushButton">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>90</y>
-           <width>151</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Plot Selected Region</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="labelDataRange_pushButton">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>120</y>
-           <width>161</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Save Labeled Data Range</string>
-         </property>
-        </widget>
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>150</y>
-           <width>371</width>
-           <height>80</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>GroupBox</string>
-         </property>
-         <widget class="QPushButton" name="nextLabeledSelection_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>10</y>
-            <width>101</width>
+            <width>75</width>
             <height>23</height>
            </rect>
           </property>
           <property name="text">
-           <string>Next Selection &gt;</string>
+           <string>Play / Pause</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="previousLabeledSelection_pushButton">
+         <widget class="QPushButton" name="stepFwdButton">
           <property name="geometry">
            <rect>
-            <x>140</x>
-            <y>10</y>
-            <width>111</width>
+            <x>170</x>
+            <y>40</y>
+            <width>75</width>
             <height>23</height>
            </rect>
           </property>
           <property name="text">
-           <string>&lt; Previous Selection</string>
+           <string>step fwd &gt;</string>
           </property>
          </widget>
-         <widget class="QLabel" name="label_4">
+         <widget class="QPushButton" name="restartPlayButton">
           <property name="geometry">
            <rect>
-            <x>30</x>
-            <y>20</y>
+            <x>250</x>
+            <y>40</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Restart</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="frameNumber_label">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>70</y>
             <width>47</width>
             <height>13</height>
            </rect>
@@ -512,68 +449,113 @@
            <string>TextLabel</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="resaveLabeledRegion_pushButton">
+         <widget class="QSlider" name="playbackPositionSlider">
           <property name="geometry">
            <rect>
-            <x>10</x>
-            <y>50</y>
-            <width>131</width>
-            <height>23</height>
+            <x>20</x>
+            <y>10</y>
+            <width>521</width>
+            <height>22</height>
            </rect>
           </property>
-          <property name="text">
-           <string>Resave Data Range</string>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
          </widget>
-         <widget class="QPushButton" name="deleteLabeledRegion_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>140</x>
-            <y>50</y>
-            <width>121</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Delete Data Label</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>50</y>
-            <width>101</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Show all Regions</string>
-          </property>
-         </widget>
+        </widget>
+        <widget class="QFrame" name="frameTime_label">
+         <property name="geometry">
+          <rect>
+           <x>650</x>
+           <y>0</y>
+           <width>301</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <widget class="QLabel" name="frameSize_label">
+            <property name="text">
+             <string>3 sec</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Playback Speed</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSlider" name="playbackSpeedSlider">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="pageStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>5</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="playbackspeed_label">
+            <property name="text">
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Frame Size</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSlider" name="frameSizeSlider">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="pageStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>3</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Tab 3</string>
+        <string>Labeling Review and Export</string>
        </attribute>
-       <widget class="QListWidget" name="listWidget">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>70</y>
-          <width>256</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QTreeWidget" name="treeWidget">
         <property name="geometry">
          <rect>
-          <x>620</x>
-          <y>80</y>
-          <width>256</width>
+          <x>1015</x>
+          <y>280</y>
+          <width>101</width>
           <height>192</height>
          </rect>
         </property>
@@ -583,23 +565,23 @@
          </property>
         </column>
        </widget>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="selectionsDF_tableWidget">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>320</y>
-          <width>601</width>
-          <height>281</height>
+          <x>10</x>
+          <y>430</y>
+          <width>971</width>
+          <height>291</height>
          </rect>
         </property>
-        <row>
-         <property name="text">
-          <string>New Row</string>
-         </property>
-        </row>
         <column>
          <property name="text">
-          <string>New Column</string>
+          <string>Data Classification</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Start Index</string>
          </property>
         </column>
         <column>
@@ -609,18 +591,78 @@
         </column>
         <column>
          <property name="text">
-          <string>New Column</string>
+          <string>Stop Index</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Stop Time</string>
          </property>
         </column>
        </widget>
-       <widget class="PlotWidget" name="widget" native="true">
+       <widget class="PlotWidget" name="labeledWholePlot" native="true">
         <property name="geometry">
          <rect>
-          <x>29</x>
-          <y>360</y>
-          <width>381</width>
-          <height>241</height>
+          <x>10</x>
+          <y>10</y>
+          <width>971</width>
+          <height>401</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>990</x>
+          <y>50</y>
+          <width>151</width>
+          <height>80</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QRadioButton" name="saveTimeStamsOnly_radioButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>131</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Save timestamps only</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="saveCroppedData_radioButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>121</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Save cropped  data</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="exportLabels_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>1004</x>
+          <y>160</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Export Labels</string>
         </property>
        </widget>
       </widget>
@@ -633,7 +675,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1171</width>
+     <width>1189</width>
      <height>21</height>
     </rect>
    </property>

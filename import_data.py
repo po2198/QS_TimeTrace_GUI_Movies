@@ -1,6 +1,6 @@
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QListWidgetItem
 from pyqtgraph import PlotWidget, plot
 from pyqtgraph.Qt import QtGui, QtCore
 import pyqtgraph as pg
@@ -17,9 +17,22 @@ from re import search
 def getfiles(self):
 
 	self.importFilenames = QFileDialog.getOpenFileNames(self, "Open Data Files", "", "All Files (*.bin *py)")
+	
+	self.filenames_listWidget.clear()
+	for filename in self.importFilenames[0]:
+		item = QListWidgetItem(f'{os.path.split(filename)[1]}')
+		item.setFlags(item.flags() | QtCore.Qt.ItemIsUserCheckable)
+	
 
+	
+		self.filenames_listWidget.addItem(item)
+		# checkBox = QtWidgets.QCheckBox("This can be checkable")
+		# self.filenames_listWidget.setItemWidget(item,checkBox)
+		
+		# self.filenames_listWidget.show()
 
-
+def singleFile(self):
+	pass
 
 
 def importRealTime(self, bin_file):

@@ -4,7 +4,7 @@ Created on March 17, 2022
 """
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog,  QListWidgetItem
 from pyqtgraph import PlotWidget, plot
 from pyqtgraph.Qt import QtGui, QtCore
 import pyqtgraph as pg
@@ -30,7 +30,8 @@ class MainWindow(QtWidgets.QMainWindow):
 	from plotting import plot_update, stepBackward, stepForward, plotRestart, plot_initialization, playButtonHandler, \
 	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated, \
 	selectedRegionPlot
-	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion, resaveLabledRegion, prevLabeledSelection, nextLabeledSelection
+	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion, resaveLabledRegion, prevLabeledSelection, nextLabeledSelection, \
+	reviewLabeledSelection, plotSelection, updateSelectionInfo, updateSelectionInfo, generateTable, saveSelection
 	
 	def __init__(self, *args, **kwargs):
         
@@ -44,6 +45,11 @@ class MainWindow(QtWidgets.QMainWindow):
 		self.playing = False
 		self.ind = 0
 		self.ui = uic.loadUi('GUI.ui',self)
+		
+		
+		
+		
+		
 		self.loadDataButton.clicked.connect(self.getfiles)   
 		
 		self.plotButton.clicked.connect(self.plot_initialization)  
@@ -71,11 +77,26 @@ class MainWindow(QtWidgets.QMainWindow):
 		
 		self.histPlot = self.ui.histogram_plot.plot()
 		self.histogram_plot.setBackground('w')
+		self.ui.histogram_plot.rotate(90)
+		
+		
+		self.labeledPlot = self.ui.labeledWholePlot.plot()
+		self.labeledWholePlot.setBackground('w')
+		
+		
+		
+		
+		
+		
+		
 		
 		self.stepBackButton.clicked.connect(self.stepBackward)
 		self.stepFwdButton.clicked.connect(self.stepForward)
 		self.restartPlayButton.clicked.connect(self.plotRestart)
 		self.playPauseButton.clicked.connect(self.playButtonHandler)
+		
+		
+		
 		
 		
 		
@@ -94,8 +115,8 @@ class MainWindow(QtWidgets.QMainWindow):
 		          
         #self.DataLabels_comboBox.activated.connect(self.)
 		
-		
-		self.labeledData_df = pd.DataFrame(columns = ['Data Classification', 'Start Index', 'Stop Index', 'Start Time', 'Stop Time'])
+		self.df_columns = ['Data Classification', 'Start Index', 'Stop Index', 'Start Time', 'Stop Time']
+		self.labeledData_df = pd.DataFrame(columns=self.df_columns)
        
 		self.labelDataRange_pushButton.clicked.connect(self.addNewLabeledRegion)
 	   
@@ -106,19 +127,17 @@ class MainWindow(QtWidgets.QMainWindow):
 		self.resaveLabeledRegion_pushButton.clicked.connect(self.resaveLabledRegion)
 		
 		
-		self.nextLabeledSelection_pushButton.clicked.connect(self.prevLabeledSelection)
-		self.previousLabeledSelection_pushButton.clicked.connect(self.nextLabeledSelection)
+		self.reviewLabeledSelection_pushButton.clicked.connect(self.reviewLabeledSelection)
+		self.nextLabeledSelection_pushButton.clicked.connect(self.nextLabeledSelection)
+		self.previousLabeledSelection_pushButton.clicked.connect(self.prevLabeledSelection)
 		
 		self.selectionIndex = -1
-            
-	def plotData(self):
-        
-		pass
+		self.reviewingSelections = False
  
         
 
         
-        
+		self.exportLabels_pushButton.clicked.connect(self.saveSelection)
         
 
 

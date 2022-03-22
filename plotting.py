@@ -54,11 +54,20 @@ def frame_boundaries(self):
 	
 	
 def plot_initialization(self):
-	print(self.importFilenames)
-	self.time, self.time_delta, self.current, self.vgs, self.vds, self.electrolyte, self.temperature = self.importRealTime(self.importFilenames[0][0])
+
+	value = self.filenames_listWidget.currentRow()
+	self.importFilename = self.importFilenames[0][value]
+	
+	self.textEdit.clear()
+	
+	self.labeledData_df = pd.DataFrame(columns=self.df_columns)
+	self.generateTable()
+	
+	print(self.importFilename)
+	self.time, self.time_delta, self.current, self.vgs, self.vds, self.electrolyte, self.temperature = self.importRealTime(self.importFilename)
 	
 	
-	self.textEdit.append(os.path.split(self.importFilenames[0][0])[1])
+	self.textEdit.append(os.path.split(self.importFilename)[1])
 	
 	self.textEdit.append(f'Vgs = {self.vgs}')
 	self.textEdit.append(f'Vds = {self.vds}')
@@ -122,36 +131,36 @@ def plot_update(self):
 
 	
 	
-	
-	# y, x = np.histogram(data[:,1] * 1e9,bins='fd') # updated to use the Freedman Diconis estimator for # of bins. Alt is auto, which is max('fd', 'sturges')
-	# self.CurrentHistogram_x[k] = x
-	# self.CurrentHistogram_y[k] = y
-	self.frame_boundaries()
-	if self.ind < self.numFrames: 
+	if self.reviewingSelections == False:
+		# y, x = np.histogram(data[:,1] * 1e9,bins='fd') # updated to use the Freedman Diconis estimator for # of bins. Alt is auto, which is max('fd', 'sturges')
+		# self.CurrentHistogram_x[k] = x
+		# self.CurrentHistogram_y[k] = y
+		self.frame_boundaries()
+		if self.ind < self.numFrames: 
+			
+			self.cropPlot.setData(self.time[self.start_ind:self.stop_ind], self.current[self.start_ind:self.stop_ind], pen='b')
+			
+			self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[self.stop_ind - 1]])
+			
+			y, x = np.histogram(self.current[self.start_ind:self.stop_ind],bins='fd')
+			
+			self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
+			
+			
+			
+		elif self.ind == self.numFrames:
+			self.cropPlot.setData(self.time[self.start_ind:], self.current[self.start_ind:], pen='b')
+			self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[-1]])
+			
+			y, x = np.histogram(self.current[self.start_ind:],bins='fd')	
+			self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
 		
-		self.cropPlot.setData(self.time[self.start_ind:self.stop_ind], self.current[self.start_ind:self.stop_ind], pen='b')
-		
-		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[self.stop_ind - 1]])
-		
-		y, x = np.histogram(self.current[self.start_ind:self.stop_ind],bins='fd')
-		
-		self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
-		
-		
-		
-	elif self.ind == self.numFrames:
-		self.cropPlot.setData(self.time[self.start_ind:], self.current[self.start_ind:], pen='b')
-		self.zoomedViewWindow.setRegion([self.time[self.start_ind], self.time[-1]])
-		
-		y, x = np.histogram(self.current[self.start_ind:],bins='fd')	
-		self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='b')
-	
-	QtWidgets.QApplication.processEvents()   
+		QtWidgets.QApplication.processEvents()   
 		
 
 
 def plot_playing(self):
-	while self.ind < self.numFrames and self.playing == True:
+	while self.ind < self.numFrames and self.playing == True and self.reviewingSelections == False:
 	
 		
 		self.plot_update()
@@ -192,7 +201,7 @@ def stepForward(self):
 	
 		if self.ind  < self.numFrames - 1:
 			self.ind = self.ind + 1 
-			print('current frame: ', self.ind, '; total frames: ', self.numFrames)
+			#print('current frame: ', self.ind, '; total frames: ', self.numFrames)
 			self.plot_update()
 			
 			self.playbackPositionSlider.setValue(self.ind + 1)
@@ -243,6 +252,13 @@ def selectedRegionUpdated(self):
 	self.lo_ind = int(np.round(self.lo / self.time_delta ))
 	self.hi_ind = int(np.round(self.hi / self.time_delta )) 
 	
+	# for the case when the region is selected outside of the actual datarange
+	if self.lo_ind < 0:
+		self.lo_ind = 0
+	if self.hi_ind > len(self.time) - 1:
+		self.hi_ind = len(self.time) - 1
+	
+	
 	#print('default: ', self.lo, '; index: ', ind, '; index vlue:', val)
 	self.startTime_lineEdit.setText(f'{self.lo:.3f}')
 	self.stopTime_lineEdit.setText(f'{self.hi:.3f}')
@@ -250,4 +266,4 @@ def selectedRegionUpdated(self):
 
 def selectedRegionPlot(self):
 	
-	self.cropPlot.setData(self.time[self.lo_ind:self.hi_ind], self.current[self.lo_ind:self.hi_ind], pen='r')
+	self.cropPlot.setData(self.time[self.lo_ind:self.hi_ind], self.current[self.lo_ind:self.hi_ind], pen='k')
