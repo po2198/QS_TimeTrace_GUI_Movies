@@ -88,9 +88,11 @@ def reviewLabeledSelection(self):
 	if self.reviewingSelections == True and self.selectionIndex != -1:
 		self.updateSelectionInfo()
 		self.plotSelection()
+		self.wholePlot.setData(self.time[::100], self.current[::100], pen='r') 
 		
 	if self.reviewingSelections == False:
 		self.plot_update()
+		self.wholePlot.setData(self.time[::100], self.current[::100], pen='b') 
 		
 def updateSelectionInfo(self):
 	self.sel_index = self.selectionIndex

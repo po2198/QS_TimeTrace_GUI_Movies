@@ -105,8 +105,7 @@ def importRealTime(self, bin_file):
 
                     
                     
-    #file_path = r'C:\Users\Peijie\Downloads\20210524-121810_Batch__Chip_W1B2C6_IV_Experiment_InitIV_InitialIV-20210526T121829Z-001\20210524-121810_Batch__Chip_W1B2C6_IV_Experiment_InitIV_InitialIV\20210524-121810_Batch__Chip_W1B2C6_IV_Experiment_InitIV_InitialIV_Chan_15.bin'
-    #file_path = r'C:\Users\Peijie\Downloads\20210524-125338_Batch__Chip_W1B2C6_RT_Experiment_Trials_rt2_p1V-20210601T153156Z-001\20210524-125338_Batch__Chip_W1B2C6_RT_Experiment_Trials_rt2_p1V\Chip_W1B2C6_RT_Experiment_Trials_rt2_p1V_Chan_15_1.bin'
+
     v_ref = 5
     
     data = np.fromfile(bin_file, dtype = 'uint16')    
