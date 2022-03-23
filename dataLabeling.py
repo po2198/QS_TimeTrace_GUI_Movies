@@ -105,7 +105,8 @@ def updateSelectionInfo(self):
 def plotSelection(self):
 	self.cropPlot.setData(self.time[self.sel_lo_ind:self.sel_hi_ind], self.current[self.sel_lo_ind:self.sel_hi_ind], pen='r')
 	
-	self.zoomedViewWindow.setRegion([self.time[self.sel_lo_ind], self.time[self.sel_hi_ind - 1]])
+	#self.zoomedViewWindow.setRegion([self.time[self.sel_lo_ind], self.time[self.sel_hi_ind - 1]])
+	self.zoomedViewWindow.setRegion([self.time[self.sel_lo_ind], self.time[self.sel_hi_ind ]])
 	
 	y, x = np.histogram(self.current[self.sel_lo_ind:self.sel_hi_ind],bins='fd')
 	self.histPlot.setData(x, y, stepMode=True, fillLevel=50, pen='r')

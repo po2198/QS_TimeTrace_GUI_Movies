@@ -263,6 +263,10 @@ def selectedRegionUpdated(self):
 	self.startTime_lineEdit.setText(f'{self.lo:.3f}')
 	self.stopTime_lineEdit.setText(f'{self.hi:.3f}')
 
+def typedRegionRange(self):
+	start = float(self.startTime_lineEdit.text())
+	stop = float(self.stopTime_lineEdit.text())
+	self.zoomedViewWindow.setRegion([start, stop])
 
 def selectedRegionPlot(self):
 	

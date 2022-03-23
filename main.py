@@ -29,7 +29,7 @@ class MainWindow(QtWidgets.QMainWindow):
 	from import_data import getfiles, importRealTime
 	from plotting import plot_update, stepBackward, stepForward, plotRestart, plot_initialization, playButtonHandler, \
 	setFrameSize, setPlaybackSpeed, playbackSliderPosition, plot_parameters, frame_boundaries, plot_playing, selectedRegionUpdated, \
-	selectedRegionPlot
+	selectedRegionPlot, typedRegionRange
 	from dataLabeling import addNewLabeledRegion, deleteLabeledRegion, resaveLabledRegion, prevLabeledSelection, nextLabeledSelection, \
 	reviewLabeledSelection, plotSelection, updateSelectionInfo, updateSelectionInfo, generateTable, saveSelection
 	
@@ -98,7 +98,7 @@ class MainWindow(QtWidgets.QMainWindow):
 		
 		
 		
-		
+		self.typedEntry_pushButton.clicked.connect(self.typedRegionRange)
 		
 		self.selectedRegionPlot_pushButton.clicked.connect(self.selectedRegionPlot)
 

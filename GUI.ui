@@ -302,6 +302,19 @@
             </property>
            </widget>
           </widget>
+          <widget class="QPushButton" name="typedEntry_pushButton">
+           <property name="geometry">
+            <rect>
+             <x>390</x>
+             <y>30</y>
+             <width>75</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Typed Entry</string>
+           </property>
+          </widget>
          </widget>
          <widget class="QListWidget" name="filenames_listWidget">
           <property name="geometry">
@@ -550,21 +563,6 @@
        <attribute name="title">
         <string>Labeling Review and Export</string>
        </attribute>
-       <widget class="QTreeWidget" name="treeWidget">
-        <property name="geometry">
-         <rect>
-          <x>1015</x>
-          <y>280</y>
-          <width>101</width>
-          <height>192</height>
-         </rect>
-        </property>
-        <column>
-         <property name="text">
-          <string notr="true">1</string>
-         </property>
-        </column>
-       </widget>
        <widget class="QTableWidget" name="selectionsDF_tableWidget">
         <property name="geometry">
          <rect>
@@ -613,8 +611,8 @@
        <widget class="QGroupBox" name="groupBox_3">
         <property name="geometry">
          <rect>
-          <x>990</x>
-          <y>50</y>
+          <x>1000</x>
+          <y>500</y>
           <width>151</width>
           <height>80</height>
          </rect>
@@ -655,8 +653,8 @@
        <widget class="QPushButton" name="exportLabels_pushButton">
         <property name="geometry">
          <rect>
-          <x>1004</x>
-          <y>160</y>
+          <x>1010</x>
+          <y>470</y>
           <width>121</width>
           <height>23</height>
          </rect>
@@ -665,6 +663,11 @@
          <string>Export Labels</string>
         </property>
        </widget>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Page</string>
+       </attribute>
       </widget>
      </widget>
     </item>
