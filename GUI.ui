@@ -27,9 +27,9 @@
        <widget class="QFrame" name="frame_4">
         <property name="geometry">
          <rect>
-          <x>9</x>
+          <x>2</x>
           <y>9</y>
-          <width>1154</width>
+          <width>1161</width>
           <height>561</height>
          </rect>
         </property>
@@ -45,7 +45,7 @@
            <x>10</x>
            <y>10</y>
            <width>661</width>
-           <height>551</height>
+           <height>541</height>
           </rect>
          </property>
          <property name="title">
@@ -109,8 +109,8 @@
            <rect>
             <x>10</x>
             <y>290</y>
-            <width>461</width>
-            <height>241</height>
+            <width>471</width>
+            <height>251</height>
            </rect>
           </property>
           <property name="title">
@@ -306,18 +306,18 @@
          <widget class="QListWidget" name="filenames_listWidget">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>80</x>
             <y>0</y>
-            <width>341</width>
-            <height>201</height>
+            <width>391</width>
+            <height>191</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="plotButton">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>50</y>
+            <x>0</x>
+            <y>70</y>
             <width>75</width>
             <height>23</height>
            </rect>
@@ -329,17 +329,17 @@
          <widget class="QTextEdit" name="textEdit">
           <property name="geometry">
            <rect>
-            <x>80</x>
-            <y>210</y>
-            <width>391</width>
-            <height>81</height>
+            <x>10</x>
+            <y>200</y>
+            <width>461</width>
+            <height>91</height>
            </rect>
           </property>
          </widget>
          <widget class="QPushButton" name="loadDataButton">
           <property name="geometry">
            <rect>
-            <x>40</x>
+            <x>0</x>
             <y>10</y>
             <width>75</width>
             <height>23</height>
@@ -355,9 +355,9 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>560</y>
-          <width>1154</width>
-          <height>115</height>
+          <y>574</y>
+          <width>1151</width>
+          <height>101</height>
          </rect>
         </property>
         <property name="maximumSize">
@@ -375,7 +375,7 @@
            <x>10</x>
            <y>10</y>
            <width>581</width>
-           <height>101</height>
+           <height>81</height>
           </rect>
          </property>
          <property name="frameShape">
@@ -387,7 +387,7 @@
          <widget class="QPushButton" name="stepBackButton">
           <property name="geometry">
            <rect>
-            <x>90</x>
+            <x>160</x>
             <y>40</y>
             <width>75</width>
             <height>23</height>
@@ -400,7 +400,7 @@
          <widget class="QPushButton" name="playPauseButton">
           <property name="geometry">
            <rect>
-            <x>10</x>
+            <x>80</x>
             <y>40</y>
             <width>75</width>
             <height>23</height>
@@ -413,7 +413,7 @@
          <widget class="QPushButton" name="stepFwdButton">
           <property name="geometry">
            <rect>
-            <x>170</x>
+            <x>240</x>
             <y>40</y>
             <width>75</width>
             <height>23</height>
@@ -426,7 +426,7 @@
          <widget class="QPushButton" name="restartPlayButton">
           <property name="geometry">
            <rect>
-            <x>250</x>
+            <x>320</x>
             <y>40</y>
             <width>75</width>
             <height>23</height>
@@ -440,7 +440,7 @@
           <property name="geometry">
            <rect>
             <x>20</x>
-            <y>70</y>
+            <y>50</y>
             <width>47</width>
             <height>13</height>
            </rect>
@@ -472,7 +472,7 @@
            <x>650</x>
            <y>0</y>
            <width>301</width>
-           <height>101</height>
+           <height>81</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout">
@@ -483,10 +483,10 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QLabel" name="label">
+          <item row="0" column="0">
+           <widget class="QLabel" name="playbackspeed_label">
             <property name="text">
-             <string>Playback Speed</string>
+             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -506,13 +506,6 @@
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="playbackspeed_label">
-            <property name="text">
-             <string>TextLabel</string>
             </property>
            </widget>
           </item>
@@ -539,6 +532,13 @@
             </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Playback Speed</string>
             </property>
            </widget>
           </item>
