@@ -584,12 +584,12 @@
         </column>
         <column>
          <property name="text">
-          <string>New Column</string>
+          <string>Stop Index</string>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Stop Index</string>
+          <string>Start Time</string>
          </property>
         </column>
         <column>
